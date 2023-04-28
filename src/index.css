@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+:root{
+  --bg-main :#131921;
+  --text-color:#aaa;
+  --light-main:#24baef;
+  --border-color: #5c5858;
+  --bg-color2:#22272e;
+}
+body{
+  background-color: var(--bg-main);
+  color: var(--text-color);
+}
+.bg-light-main{
+  background-color: var(--light-main);
+}
+a ,a:hover{
+  text-decoration: none;
+  color:var(--text-color);
+}
+.navbar-bg-color
+{
+  background-color:#22272e;
+}
+.my-input{
+  background-color: var(--bg-main);
+  color: var(--text-color);
+  border: solid 1px var(--border-color);
+}
+.brdr{
+  height: 1px ;
+  background-color: var(--border-color);
+}
+.vote{
+  background-color: var(--light-main);
+  color: var(--text-color);
+}
+.regpart{
+background-color: var(--bg-color2);
+}
+.bordary{
+  border: solid 1px var(--border-color);
+border-radius: 5px;
+background-color: #31363b;
+}
+.navy{
+  border-bottom:solid 1px #7a7a7a ;
+}
+.home-start{
+height: 300px;
+  background-image: url(backgr.png);
+  background-size: cover;
+}
+.navbar-logo
+{
+  width:70px
+}
+.logo-text
+{
+  font-family: Dancing Script;
+  font-weight: 200;
+  font-size: 20px;
+}
+#loading
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    color: var(--light-main);
+    background-color: #22272e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bolder;
+}
