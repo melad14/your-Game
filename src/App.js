@@ -1,6 +1,6 @@
 
 import './App.css';
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
+import {  RouterProvider, Navigate, createHashRouter } from 'react-router-dom'
 import {  useEffect, useContext } from 'react'
 import jwtDecode from 'jwt-decode'
 import Layout from './component/Layout/Layout';
@@ -58,7 +58,7 @@ function App() {
 
 
 
-  let routers = createBrowserRouter([
+  let routers = createHashRouter([
     {
       path: '/', element: <Layout logOut={logOut} userData={userData} />, children: [
         { index:true, element: <ProtectedRoute saveUserData={saveUserData} userData={userData} ><Home /></ProtectedRoute> },
