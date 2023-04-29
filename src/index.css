@@ -8,6 +8,7 @@
   --bg-color2:#22272e;
 }
 body{
+  
   background-color: var(--bg-main);
   color: var(--text-color);
 }

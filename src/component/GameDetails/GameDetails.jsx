@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { Carousel } from 'react-bootstrap'
 
 
 export default function GameDetails() {
@@ -32,6 +33,7 @@ export default function GameDetails() {
 
     {
         let Requirements = gameDetails.minimum_system_requirements
+        console.log(Requirements);
         if (Requirements !== undefined) {
             var graphics = Requirements.graphics
             var memory = Requirements.memory
@@ -55,7 +57,7 @@ export default function GameDetails() {
                         <div className="col-md-4 text-center py-2">
                             <button className='btn bg-black text-light'>free</button>
                         </div>
-                        <div className="col-md-8 text-center pt-2  "> <button className='btn bg-light-main w-100'>free </button>
+                        <div className="col-md-8 text-center pt-2  "> <a  href={String(gameDetails.freetogame_profile_url)}  className='btn bg-light-main w-100'>PLAY NOW ! </a>
                         </div>
 
                     </div>
@@ -67,17 +69,18 @@ export default function GameDetails() {
                 <h2> {gameDetails.title}</h2>
 
                 <h4>about {gameDetails.title}</h4>
-                <p>{gameDetails.description}</p>
+                <p className='text-muted'>{gameDetails.description}</p>
 
                 <h3>Minimum System Requirements</h3>
-                <h6>graphics : {graphics}</h6>
-                <h6>memory : {memory}</h6>
-                <h6>os : {os}</h6>
-                <h6>processor : {processor}</h6>
-                <h6>Storage : {storage}</h6>
+                <h6>graphics : <span className='text-muted'>{graphics}</span></h6>
+                <h6>memory :<span className='text-muted'>{memory}</span> </h6>
+                <h6>os :<span className='text-muted'>{os}</span> </h6>
+                <h6>processor :<span className='text-muted'> {processor}</span></h6>
+                <h6>Storage : <span className='text-muted'>{storage}</span></h6>
 
 
                 <h2 className="my-4">Additional Information</h2>
+
                 <div className="row mb-5 mt-2">
                     <div className=" col-md-4">
                         <span className="text-muted">
@@ -86,6 +89,10 @@ export default function GameDetails() {
                         </span>
                         <p className="small">{gameDetails.title}</p>
                     </div>
+
+
+
+
                     <div className=" col-md-4">
                         <span className="text-muted">
                             Developer
@@ -127,6 +134,33 @@ export default function GameDetails() {
                     </div>
                 </div>
 
+            <Carousel className='mb-4' controls={false} indicators={false} interval={1000}>
+              <Carousel.Item>
+                {gameDetails.screenshots && (
+                  <img
+                    className="d-block w-100"
+                    src={gameDetails.screenshots[0]?.image}
+                  />
+                )}
+              </Carousel.Item>
+              <Carousel.Item>
+                {gameDetails.screenshots && (
+                  <img
+                    className="d-block w-100"
+                    src={gameDetails.screenshots[1]?.image}
+                  />
+                )}
+              </Carousel.Item>
+              <Carousel.Item>
+                {gameDetails.screenshots && (
+                  <img
+                    className="d-block w-100"
+                    src={gameDetails.screenshots[2]?.image}
+                  />
+                )}
+              </Carousel.Item>
+              
+            </Carousel>
 
             </div>
 
