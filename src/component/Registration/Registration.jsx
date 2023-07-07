@@ -34,7 +34,7 @@ export default function Registration() {
 
   async function sendDataApi() {
 
-    let { data } = await axios.post('https://sticky-note-fe.vercel.app/signup', inputData)
+    let { data } = await axios.post('https://userapi-haj1.onrender.com/signup', inputData)
 
     if (data.message === 'success') {
       navigate('/Login')
@@ -52,7 +52,7 @@ export default function Registration() {
       last_name: joi.string().min(3).max(8).required(),
       age: joi.number().min(16).max(80).required(),
       email: joi.string().email({ tlds: { allow: ['com', 'net'] } }).required(),
-      password: joi.string().pattern(/^[A-Z][a-z]{3,8}$/).required(),
+      password: joi.string().pattern(/^[A-Z][a-z0-9]{3,8}$/).required(),
     })
     return scheme.validate(inputData, { abortEarly: false })
 

@@ -28,7 +28,7 @@ export default function Login({ saveUserData }) {
 
   async function sendDataApi() {
 
-    let { data } = await axios.post('https://sticky-note-fe.vercel.app/signin', inputData)
+    let { data } = await axios.post('https://userapi-haj1.onrender.com/signin', inputData)
 
     if (data.message === 'success') {
       localStorage.setItem('userToken', data.token)
@@ -46,7 +46,7 @@ export default function Login({ saveUserData }) {
     let scheme = joi.object({
 
       email: joi.string().email({ tlds: { allow: ['com', 'net'] } }).required(),
-      password: joi.string().pattern(/^[A-Z][a-z]{3,8}$/).required(),
+      password: joi.string().pattern(/^[A-Z][a-z0-9]{3,8}$/).required(),
     })
     return scheme.validate(inputData, { abortEarly: false })
 
