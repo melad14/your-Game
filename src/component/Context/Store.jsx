@@ -9,6 +9,9 @@ export default function MediaContextProvider(props) {
     const [loading, setLoading] = useState(true);
     const [allGames, setAllGames] = useState([])
 
+
+
+
     async function getGames() {
         let { data } = await axios.get(`https://free-to-play-games-database.p.rapidapi.com/api/games`, {
             headers: {
@@ -23,6 +26,7 @@ export default function MediaContextProvider(props) {
     }
 
 
+    
     useEffect(() => {
 
         getGames();

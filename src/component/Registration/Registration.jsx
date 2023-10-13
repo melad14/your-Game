@@ -34,17 +34,17 @@ export default function Registration() {
 
   async function sendDataApi() {
 
-    let { data } = await axios.post('https://userapi-haj1.onrender.com/signup', inputData)
-
-    if (data.message === 'success') {
+    await axios.post('https://userapi-haj1.onrender.com/signup', inputData).then((data)=>{
       navigate('/Login')
       setLoding(false)
-    }
-    else {
-      setErrorApi(data.message)
+    }).catch((err)=>{
+      setErrorApi(err.response.data.error)
       setLoding(false)
+    })
 
-    }
+     
+
+    
   }
   function validation() {
     let scheme = joi.object({

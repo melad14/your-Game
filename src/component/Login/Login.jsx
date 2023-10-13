@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import RegImage from '../../RegImage.jpg'
 import { useState } from 'react'
 import axios from 'axios'
 import joi from 'joi'
-export default function Login({ saveUserData }) {
+import { AuthContext } from './../Context/AuthContext';
+export default function Login() {
   let navigate = useNavigate();
-  
+  let {saveUserData }=useContext(AuthContext)
+
   const [errorApi, setErrorApi] = useState('')
   const [errorValidation, setErrorValidation] = useState([])
   const [loding, setLoding] = useState(false)
@@ -26,21 +28,25 @@ export default function Login({ saveUserData }) {
     setInputData(myUser)
   }
 
+
   async function sendDataApi() {
+ await axios.post('https://userapi-haj1.onrender.com/signin', inputData).then((data)=>{
 
-    let { data } = await axios.post('https://userapi-haj1.onrender.com/signin', inputData)
+ localStorage.setItem('userToken', data.data.token)
+ saveUserData();
+ navigate('')
+ setLoding(false)
+ }).catch((err)=>{
 
-    if (data.message === 'success') {
-      localStorage.setItem('userToken', data.token)
-      saveUserData();
-      navigate('')
-      setLoding(false)
-    }
-    else {
-      setErrorApi(data.message)
-      setLoding(false)
+  setErrorApi(err.response.data.error)
+  setLoding(false)
+ })
 
-    }
+
+    
+   
+
+    
   }
   function validationLog() {
     let scheme = joi.object({

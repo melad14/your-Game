@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import logo from "../../images/logo.png";
+import { AuthContext } from '../Context/AuthContext.jsx';
 
-export default function Navbar({ userData, logOut }) {
+export default function Navbar() {
+  let{userData,logOut}=useContext(AuthContext)
 
   return <>
     <nav className="navbar navbar-expand-lg navbar-bg-color shadow-lg py-3 ">
