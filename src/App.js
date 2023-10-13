@@ -71,6 +71,8 @@ function App() {
           <Route path='registration' element={<InverseProtectedRoute><Registration /></InverseProtectedRoute>} />
           <Route path='login' element={<InverseProtectedRoute><Login /></InverseProtectedRoute>} />
           <Route path='*' element={<NotFound />} />
+          <Route path='*' element={<Home />} />
+          
 
 
         </Route>
