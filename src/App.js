@@ -45,6 +45,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path='your-Game' element={<ProtectedRoute><Home /></ProtectedRoute>} />
           <Route path='all' element={<ProtectedRoute><All /></ProtectedRoute>} />
           <Route path='Category/action' element={<ProtectedRoute><Zombie /></ProtectedRoute>} />
           <Route path='Category/zombie' element={<ProtectedRoute><Action /></ProtectedRoute>} />
