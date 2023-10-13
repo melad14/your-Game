@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/your-Game/static/css/main.d551ba7b.css",
-    "main.js": "/your-Game/static/js/main.13a6426c.js",
+    "main.js": "/your-Game/static/js/main.88ccdb9a.js",
     "static/js/787.d1340d69.chunk.js": "/your-Game/static/js/787.d1340d69.chunk.js",
     "static/media/fa-solid-900.ttf": "/your-Game/static/media/fa-solid-900.b1a653db79258eeccc5d.ttf",
     "static/media/backgr.png": "/your-Game/static/media/backgr.0fddd1fbe0a5e0a0af93.png",
@@ -17,11 +17,11 @@
     "static/media/fa-v4compatibility.woff2": "/your-Game/static/media/fa-v4compatibility.4ee7f902d88f819e251c.woff2",
     "index.html": "/your-Game/index.html",
     "main.d551ba7b.css.map": "/your-Game/static/css/main.d551ba7b.css.map",
-    "main.13a6426c.js.map": "/your-Game/static/js/main.13a6426c.js.map",
+    "main.88ccdb9a.js.map": "/your-Game/static/js/main.88ccdb9a.js.map",
     "787.d1340d69.chunk.js.map": "/your-Game/static/js/787.d1340d69.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d551ba7b.css",
-    "static/js/main.13a6426c.js"
+    "static/js/main.88ccdb9a.js"
   ]
 }
