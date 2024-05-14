@@ -30,7 +30,7 @@ export default function Login() {
 
 
   async function sendDataApi() {
- await axios.post('https://userapi-haj1.onrender.com/signin', inputData).then((data)=>{
+ await axios.post('https://users-api-ashy.vercel.app/signin', inputData).then((data)=>{
 
  localStorage.setItem('userToken', data.data.token)
  saveUserData();
