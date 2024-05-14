@@ -34,7 +34,7 @@ export default function Registration() {
 
   async function sendDataApi() {
 
-    await axios.post('https://userapi-haj1.onrender.com/signup', inputData).then((data)=>{
+    await axios.post('https://users-api-ashy.vercel.app/signup', inputData).then((data)=>{
       navigate('/Login')
       setLoding(false)
     }).catch((err)=>{
